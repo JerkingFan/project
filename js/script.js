@@ -1,16 +1,34 @@
 "use sctrict"
 
-const obj = {
+let numberOfFilms = prompt("Сколько фильмов вы уже посмотрели?", 0);
 
-    name: "John",
-    age: 25,
-    isMarried: false
-    
-};
+let personalMovieDB = {
 
-console.log(obj.age);
-console.log(obj["name"]);
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: {},
+    priva: false
 
-let array = ['s.png', 'ora.png', 3, false, obj]
+}
 
-console.log(array[array.length-2]);
+let i = 0;
+
+let movies = {
+
+
+
+
+}
+
+while (i< personalMovieDB.count ){
+
+    let film = prompt("Один из последниъ прсомотренных фильмо?", 0);
+    let degree = prompt("На сколько оцените его?", 0);
+
+    personalMovieDB.movies[film] = degree;
+
+    i++;
+}
+
+console.log(personalMovieDB)
