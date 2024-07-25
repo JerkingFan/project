@@ -60,16 +60,31 @@ let personalMovieDB = {
     writeYourGenres: function(){
         for (let i = 0; i <= 2; i++){
 
-            let answer = prompt(`Ваш любимый жанр? ${i}`, '');
+            while (answer == null || answer == ''){
+                let answer = prompt(`Ваш любимый жанр? ${i}`, ''); 
+            }
             personalMovieDB.genres[i - 1] = answer;
     
         }
+
+        personalMovieDB.forEach((element, i) => {
+            console.log(`Любимый жанр ${i} -- это ${element}`);
+        });
+
     },
     detectPrivat: function(){
         if (obj.privat == false){
 
             return obj;
     
+        }
+    },
+    toggleVisibleMyDB: function(){
+        if (personalMovieDB.privat == false){
+            personalMovieDB.privat = true;
+        } 
+        else{
+            personalMovieDB.privat = false;
         }
     }
 
